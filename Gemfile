@@ -36,9 +36,24 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
 
+
+# Generate fake horse data
 gem "faker"
 
-# gem "active"
+# Gives us the activeadmin panel
+gem "activeadmin"
+
+# Gives us the devise login gem
+gem "devise"
+
+# Fix some of the CSS problems with activeadmin
+gem "sassc-rails"
+
+# Alternative photo API
+gem "pexels"
+
+# to load API keys as environment variables via a .env file
+gem "dotenv", groups: [ :development, :test ]
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -56,7 +71,7 @@ group :development do
   gem "web-console"
 
   # Highlight the fine-grained location where an error occurred [https://github.com/ruby/error_highlight]
-  gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
+  gem "error_highlight", ">= 0.4.0", platforms: [ :ruby ]
 end
 
 group :test do
