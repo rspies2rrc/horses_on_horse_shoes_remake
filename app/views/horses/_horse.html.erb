@@ -1,0 +1,25 @@
+<div class="ml-5">
+  <div class="ml-5 mt-5">
+    <div>
+      <p class="text-3xl">
+        <% if show_link %>
+          <%= link_to horse.name, horse %>
+        <% else %>
+          <%= horse.name %>
+        <% end %>
+      </p>
+      <p>Breed: <%= link_to horse.breed.name, horse.breed %></p>
+    </div>
+    <footer>
+      <p>
+        Age: <br><%= horse.age %>
+      </p>
+      <p>
+        Legs: <br><%= horse.number_of_legs %>
+      </p>
+      <p>
+        Speed: <br><%= horse.top_speed.round(2) %>
+      </p>
+    </footer>
+  </div>
+</div>

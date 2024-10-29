@@ -1,0 +1,9 @@
+<h3 class="text-xl"><%= @breed.name %></h3>
+
+<h4 class="text-lg">Horses of this breed</h4>
+
+<div class="ml-5">
+  <%= render partial: 'horses/horse',
+             collection: @breed.horses,
+             locals: { show_link: true } %>
+</div>

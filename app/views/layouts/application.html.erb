@@ -17,6 +17,15 @@
   </head>
 
   <body>
-    <%= yield %>
+    <section class="ml-5">
+      <div class="ml-5">
+        <header>
+          <h1 class="text-5xl font-bold"><%= link_to 'Horses on Rails', root_path %></h1>
+          <h2 class="text-3xl">Look at all the pretty horses standing in a <strong>row, row, row</strong>.</h2>
+        </header>
+        <%= render partial: 'shared/search_form' %>
+        <%= yield %>
+      </div>
+    </section>
   </body>
 </html>

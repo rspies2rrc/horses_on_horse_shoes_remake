@@ -1,9 +1,18 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+NUMBER_OF_BREEDS = 4
+HORSES_PER_BREED = 4
+
+NUMBER_OF_BREEDS.times do
+  breed = Breed.create(name: Faker::Creature::Horse.unique.breed)
+
+  HORSES_PER_BREED.times do
+    horse = breed.horses.create(
+      name:           Faker::Creature::Horse.unique.name,
+      age:            rand(3..348),
+      top_speed:      3.1415926 * rand(20..56),
+      number_of_legs: rand(1..14)
+    )
+  end
+end
+
+puts "Created #{Breed.count} Breeds."
+puts "Created #{Horse.count} Horses."
